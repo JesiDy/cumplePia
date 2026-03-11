@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cumple 2 añitos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Open Sans',sans-serif;
+color:#4a3f35;
+background-image:url("https://images.unsplash.com/photo-1565372910942-7ad2c2f2e6ff");
+background-size:cover;
+background-position:center;
+overflow-x:hidden;
+}
+
+.overlay{
+background-color:rgba(255,255,255,0.92);
+min-height:100vh;
+padding:40px 20px;
+text-align:center;
+}
+
+h1{
+font-family:'Great Vibes',cursive;
+font-size:3.5em;
+color:#ff4fa3;
+}
+
+h2{
+font-size:1.8em;
+}
+
+h3{
+font-size:22px;
+margin-top:10px;
+color:#444;
+}
+
+/* torta */
+
+.cake{
+font-size:90px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+}
+
+/* contador */
+
+#countdown{
+font-size:26px;
+margin-top:10px;
+background:white;
+padding:12px 18px;
+border-radius:14px;
+display:inline-block;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+color:#ff2f92;
+font-weight:bold;
+}
+
+/* botones */
+
+.rsvp-button{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#ff7ab8;
+color:white;
+border-radius:10px;
+text-decoration:none;
+border:none;
+cursor:pointer;
+font-size:16px;
+}
+
+.rsvp-button:hover{
+background:#ff4fa3;
+}
+
+/* carrusel */
+
+.carousel-row{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+margin-top:40px;
+}
+
+.carousel{
+width:300px;
+}
+
+.carousel img{
+width:100%;
+display:none;
+border-radius:12px;
+}
+
+.carousel img.active{
+display:block;
+}
+
+.carousel{
+width:260px;
+height:260px;
+overflow:hidden;
+border-radius:30px;
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* globos */
+
+.balloon{
+position:fixed;
+bottom:-120px;
+width:60px;
+animation:float 14s infinite;
+opacity:0.8;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+
+/* confetti */
+
+.confetti{
+position:fixed;
+width:10px;
+height:10px;
+top:-10px;
+animation:confettiFall 6s linear infinite;
+}
+
+@keyframes confettiFall{
+0%{transform:translateY(-10px) rotate(0deg);}
+100%{transform:translateY(100vh) rotate(720deg);}
+}
+
+/* arcoiris */
+
+.rainbow{
+position:fixed;
+top:50px;
+left:-200px;
+width:120px;
+animation:rainbowMove 18s linear infinite;
+}
+
+@keyframes rainbowMove{
+0%{left:-200px;}
+100%{left:120%;}
+}
+
+</style>
+</head>
+
+<body>
+
+<img class="rainbow" src="https://cdn-icons-png.flaticon.com/512/414/414927.png">
+
+<img class="balloon" style="left:10%" src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png">
+<img class="balloon" style="left:30%;animation-delay:3s" src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png">
+<img class="balloon" style="left:50%;animation-delay:6s" src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png">
+<img class="balloon" style="left:70%;animation-delay:2s" src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png">
+<img class="balloon" style="left:90%;animation-delay:4s" src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png">
+
+<div class="confetti" style="left:10%;background:#ff4fa3"></div>
+<div class="confetti" style="left:30%;background:#ffd93d"></div>
+<div class="confetti" style="left:50%;background:#6bcB77"></div>
+<div class="confetti" style="left:70%;background:#4d96ff"></div>
+<div class="confetti" style="left:90%;background:#ff6b6b"></div>
+
+<div class="overlay">
+
+<h1>¡Cumplo 2 añitos!</h1>
+
+<h2>🎉 PIA 🎉</h2>
+
+<div class="cake">🎂</div>
+
+<h3>📅 Sábado 22 de marzo - 17:00 hs a 21:00 hs</h3>
+
+<div id="countdown"></div>
+
+<p>📍 En el salón Cortes</p>
+
+<a href="https://www.google.com/maps/search/?api=1&query=Jerónimo+Cortés+819%2C+X5000+Córdoba"
+target="_blank"
+class="rsvp-button">
+Ver ubicación del salón 📍
+</a>
+
+<br>
+
+<button class="rsvp-button" onclick="playMusic()">🎵 Reproducir música</button>
+
+<audio id="musica" loop>
+<source src="Happy-birthday-instrumental.mp3" type="audio/mp3">
+</audio>
+
+<br>
+
+<a href="https://wa.me/543512557371?text=Hola! Confirmo asistencia al cumple de PIA "
+target="_blank"
+class="rsvp-button">
+Confirmar por WhatsApp a Mamá 📱
+</a>
+
+<a href="https://wa.me/543516754245?text=Hola! Confirmo asistencia al cumple de PIA"
+target="_blank"
+class="rsvp-button">
+Confirmar por WhatsApp a Papá 📱
+</a>
+<div class="carousel-row">
+
+<div class="carousel" id="carousel1">
+<img src="piauno.jpeg" class="active">
+<img src="piados.jpeg">
+<img src="piacinco.jpeg">
+<img src="piaseis.jpeg">
+<img src="pianueve.jpeg">
+</div>
+
+<div class="carousel" id="carousel2">
+<img src="piatres.jpeg">
+<img src="piacuatro.jpeg">
+<img src="piasiete.jpeg">
+<img src="piaocho.jpeg">
+<img src="piadiez.jpeg">
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* música */
+
+function playMusic(){
+document.getElementById("musica").play();
+}
+
+/* cuenta regresiva */
+
+const countdown=document.getElementById("countdown");
+const eventDate=new Date("2026-03-22T17:00:00");
+
+function updateCountdown(){
+
+const now=new Date();
+const diff=eventDate-now;
+
+if(diff<=0){
+countdown.innerHTML="🎉 ¡Hoy es el gran día!";
+return;
+}
+
+const days=Math.floor(diff/(1000*60*60*24));
+const hours=Math.floor((diff/(1000*60*60))%24);
+const minutes=Math.floor((diff/1000/60)%60);
+const seconds=Math.floor((diff/1000)%60);
+
+countdown.innerHTML=`⏳ Faltan ${days} días ${hours} hs ${minutes} min ${seconds} seg`;
+
+}
+
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+/* carrusel */
+
+function iniciarCarrusel(id){
+
+const imgs=document.querySelectorAll(`#${id} img`);
+let actual=0;
+
+setInterval(()=>{
+
+imgs[actual].classList.remove("active");
+
+actual=(actual+1)%imgs.length;
+
+imgs[actual].classList.add("active");
+
+},3000);
+
+}
+
+iniciarCarrusel("carousel1");
+iniciarCarrusel("carousel2");
+
+</script>
+
+</body>
+</html>
